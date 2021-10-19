@@ -1,9 +1,8 @@
 
 import { connect } from 'react-redux'
 
-const Counter = ({counterZapatos, counterSandalias, incrementarZapatos, meGustaSandalias, color}) => {
 
-
+const Counter = ({counterZapatos, counterSandalias, incrementarZapatos, meGustaSandalias, color, c}) => {
 
         return (
         <div>
@@ -11,7 +10,7 @@ const Counter = ({counterZapatos, counterSandalias, incrementarZapatos, meGustaS
             <h1>Zapatos: {counterZapatos}</h1>
             <button id="botonD" onClick={(e) => incrementarZapatos(e)}>Agregar Zapatos</button>
             <h1>Sandalias: {counterSandalias}</h1>
-            <button Style={color} onClick={() => meGustaSandalias()}>Me Gusta</button>
+            <button style={{backgroundColor: color, color: c}} onClick={() => meGustaSandalias()}>Me Gusta</button>
         </div>
     )
 }
@@ -37,7 +36,8 @@ function Prueba(e) {
 const mapStateToProps = state => ({
     counterZapatos: state.counter.zapatos,
     counterSandalias: state.counter.sandaliasNoMeGusta,
-    color: state.counter.color1
+    color: state.counter.color1,
+    c: state.counter.c1
     
 })
 

@@ -2,8 +2,10 @@ const estadoInicial = {
   zapatos: 30,
   sandaliasMegusta: 1,
   sandaliasNoMeGusta: 0,
-  color1: 'background-color:none; color:none',  
-  color2: 'background-color:red; color:white'
+  color1: 'transparent',  
+  color2: 'red',
+  c1: 'black',
+  c2: 'white'
 };
 
 export default function counter(state = estadoInicial, action) {
@@ -25,7 +27,9 @@ export default function counter(state = estadoInicial, action) {
         sandaliasNoMeGusta: state.sandaliasMegusta,
         sandaliasMegusta: state.sandaliasNoMeGusta,
         color1: state.color2,
-        color2: state.color1
+        color2: state.color1,
+        c1: state.c2,
+        c2: state.c1
       };
 
     default:
